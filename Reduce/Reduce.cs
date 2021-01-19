@@ -291,7 +291,7 @@ namespace LlamaLibrary.Reduce
             
             List<BagSlot> toDesynthList = InventoryManager.GetBagsByInventoryBagId(BagsToCheck())
                                                            .SelectMany(bag => bag.FilledSlots
-                                                                                 .FindAll(bs => bs.IsDesynthesizable && (ShouldDesynth(bs.Item.EnglishName) || ExtraCheck(bs)))).ToList();
+                                                                                 .FindAll(bs => bs.IsDesynthesizable)).ToList();
 
             //if (MovementManager.IsOccupied) return false;
             //          if (!InventoryManager.GetBagsByInventoryBagId(BagsToCheck()).Any(bag => bag.FilledSlots.Any(bs => bs.IsDesynthesizable)))
